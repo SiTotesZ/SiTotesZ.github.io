@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  padding-top: 10px;
+  padding-right: 10%;
+  padding-bottom: 10px;
+  padding-left: 10%;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.container-tengah {
+    text-align: center;
+}
+
+.teks-rata-kiri {
+    text-align: left;
+    line-height: 35px;
+    display: inline-block;
+}
+
+.jarak-atas {
+    margin-top: 50px;
+}
+
+.deskripsi {
+    font-size: 10px;
+}
