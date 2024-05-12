@@ -7,26 +7,24 @@
 </head>
 <body>
     <h1>Daftar File</h1>
+    <input type="file" id="fileInput" multiple onchange="handleFiles(this.files)">
     <ul id="fileList">
         <!-- List akan diisi oleh JavaScript -->
     </ul>
 
     <script>
-        // Mengambil daftar file dari server
-        fetch('get_files.php')
-            .then(response => response.json())
-            .then(data => {
-                var ul = document.getElementById("fileList");
-                data.forEach(function(file) {
-                    var li = document.createElement("li");
-                    var a = document.createElement("a");
-                    a.href = file;
-                    a.textContent = file;
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
-            })
-            .catch(error => console.error('Error:', error));
+        function handleFiles(files) {
+            var fileList = document.getElementById("fileList");
+            fileList.innerHTML = ''; // Bersihkan daftar sebelum menambahkan file baru
+            for (var i = 0; i < files.length; i++) {
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(files[i]);
+                a.textContent = files[i].name;
+                li.appendChild(a);
+                fileList.appendChild(li);
+            }
+        }
     </script>
 </body>
 </html>
