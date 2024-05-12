@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar File</title>
+</head>
+<body>
+    <h1>Daftar File</h1>
+    <ul id="fileList">
+        <!-- Daftar file akan dimasukkan melalui JavaScript -->
+    </ul>
+
+    <script>
+        // Direktori dari file-file yang ingin ditampilkan
+        var directory = "./";
+
+        // Mengambil daftar file dalam direktori
+        fetch(directory)
+            .then(response => response.text())
+            .then(text => {
+                // Mendapatkan daftar file
+                var files = text.split("\n").filter(file => file.trim() !== "");
+
+                // Mendapatkan elemen ul tempat daftar file akan dimasukkan
+                var fileList = document.getElementById("fileList");
+
+                // Menambahkan setiap file ke dalam daftar
+                files.forEach(file => {
+                    var listItem = document.createElement("li");
+                    var link = document.createElement("a");
+                    link.href = directory + file;
+                    link.textContent = file;
+                    listItem.appendChild(link);
+                    fileList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error("Error:", error));
+    </script>
+</body>
+</html>
