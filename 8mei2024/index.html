@@ -12,26 +12,26 @@
     </ul>
 
     <script>
-        // Direktori dari file-file yang ingin ditampilkan
         var directory = "./";
 
-        // Mengambil daftar file dalam direktori
+        // Fungsi untuk membuat link dan menambahkannya ke daftar
+        function createListItem(file) {
+            var listItem = document.createElement("li");
+            var link = document.createElement("a");
+            link.textContent = file;
+            link.href = directory + file;
+            listItem.appendChild(link);
+            return listItem;
+        }
+
+        // Mengambil daftar file dan menambahkannya ke dalam daftar
         fetch(directory)
             .then(response => response.text())
             .then(text => {
-                // Mendapatkan daftar file
-                var files = text.split("\n").filter(file => file.trim() !== "");
-
-                // Mendapatkan elemen ul tempat daftar file akan dimasukkan
                 var fileList = document.getElementById("fileList");
-
-                // Menambahkan setiap file ke dalam daftar
+                var files = text.split('\n').filter(file => file.trim() !== "");
                 files.forEach(file => {
-                    var listItem = document.createElement("li");
-                    var link = document.createElement("a");
-                    link.href = directory + file;
-                    link.textContent = file;
-                    listItem.appendChild(link);
+                    var listItem = createListItem(file);
                     fileList.appendChild(listItem);
                 });
             })
