@@ -7,35 +7,24 @@
 </head>
 <body>
     <h1>Daftar File</h1>
-    <ul id="fileList">
-        <!-- Daftar file akan dimasukkan melalui JavaScript -->
-    </ul>
-
-    <script>
-        var directory = "./";
-
-        // Fungsi untuk membuat link dan menambahkannya ke daftar
-        function createListItem(file) {
-            var listItem = document.createElement("li");
-            var link = document.createElement("a");
-            link.textContent = file;
-            link.href = directory + file;
-            listItem.appendChild(link);
-            return listItem;
+    <ul>
+        <!-- PHP Script untuk menampilkan daftar file -->
+        <?php
+        // Direktori dari file-file yang ingin ditampilkan
+        $dir = "./";
+        
+        // Mengambil daftar file dalam direktori
+        $files = scandir($dir);
+        
+        // Menampilkan daftar file sebagai list
+        foreach($files as $file) {
+            // Memastikan file adalah file (bukan direktori) dan bukan file sistem
+            if(is_file($dir . $file) && !in_array($file, array('.', '..'))) {
+                // Membuat link untuk membuka file
+                echo "<li><a href='$file'>$file</a></li>";
+            }
         }
-
-        // Mengambil daftar file dan menambahkannya ke daftar
-        fetch(directory)
-            .then(response => response.text())
-            .then(text => {
-                var fileList = document.getElementById("fileList");
-                var files = text.split('\n').filter(file => file.trim() !== "");
-                files.forEach(file => {
-                    var listItem = createListItem(file);
-                    fileList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error("Error:", error));
-    </script>
+        ?>
+    </ul>
 </body>
 </html>
