@@ -62,6 +62,7 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: center;
+  z-index: 2;
 }
 
 .navbar li {
@@ -110,26 +111,7 @@ body ul li a {
   padding-left: 60px;
   padding-right: 60px;
 }
-.sitotes-page ul li {
-  background-color: #fff;
-  border-radius: 100px;
-  box-shadow: 0px 0.5px 1px 0px #2b2d2e;
-  padding: 50px;
-  margin-bottom: 10px;
-  transition: 0.5s ease-in-out;
-}
 
-.sitotes-page ul:hover li {
-  background-color: #f0f0f0;
-  transform: scale(0.98);
-}
-.sitotes-page ul li:hover {
-  background-color: #fff;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  box-shadow: 0px 0px 0px 3px #43474a;
-  transform: scale(1.02);
-}
 
 
 
@@ -162,12 +144,4 @@ body ul li a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-
-.sitotes-animasi {
-  transition: 0.5s ease-in-out;
-}
-.sitotes-animasi:hover {
-  transform: scale(1.1);
 }
