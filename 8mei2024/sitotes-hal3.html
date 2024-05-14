@@ -5,7 +5,38 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>sitotes halaman 3</title>
 	    <link rel="stylesheet" type="text/css" href="sitotes.css">
-	    <style></style>
+	    <style>
+.sitotes-page ul li {
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 0.5px 1px 0px #2b2d2e;
+  padding: 50px;
+  margin-bottom: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+
+
+
+
+.gabar-cssdesign {
+    border: 3px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+.gabar-cssdesign:hover {
+    border-color: #e74c3c;
+    transform: scale(1.03);
+}
+.gabar-cssdesign:not(:hover) {
+    filter: grayscale(50%);
+}
+
+
+
+		</style>
 	</head>
 	<body>
 		<div class="kepala">
@@ -17,7 +48,7 @@
 		  	<b><i>Tugas 8 Mei 2024</i></b>
 		  	<br>
 		  	<br>
-		  	Halaman ini berisi beberapa apa yang m.saiful.anam.r pelajari mulai dari semester satu sampai semester dua
+		  	Halaman ini berisi cara penggunaan tag IMG atau cara menambahkan gambar pada HTML
 		  	<br>
 		  	<br>
 		  	<br>
@@ -27,17 +58,42 @@
 		  </p>
 		</div>
 
-		<ul class="navbar">
+		<ul class="navbar linga">
 		  <li><b><a href="sitotes-hal1">Hal 1</a></b></li>
 		  <li><b><a href="sitotes-hal2">Hal 2</a></b></li>
 		  <li><b><a class="active" href="sitotes-hal3">Hal 3 </a></b></li>
 		</ul>
 
 		<div class="sitotes-page">
-			
+			<ul>
+				<li>
+					<h4>Ukuran gambar html nya di setting width="60%"</h4>
+					<br>
+					<img src="material-back.png" width="60%">
+				</li>
+				<li>
+					<h4>Gambar yang diberi desain simpel CSS</h4>
+					<br>
+					<img class="gabar-cssdesign" src="material-back.png" width="60%">
+					<p>sentuh atau arahkan kursor ke gambar</p>
+				</li>
+				<li>
+					<h4>Gambar yang di klik membuka link</h4>
+					<br>
+					<a href="https://google.com" target="_blank" width="60%">
+						<img class="gabar-cssdesign" src="material-back.png" width="60%">
+					</a>
+					<p>klik gambar</p>
+				</li>
+				<li>
+					<h4>Gambar sandard tidak diberi apa apa dan ukuran asli</h4>
+					<br>
+					<img src="material-back.png" width="100%">
+				</li>
+			</ul>
 		</div>
 
-		<div class="footer">
+		<div class="footer linga">
 			<h2>Tugas Lain yang pernah saya kerjakan :</h2>
 			<br>
 			<ul>
